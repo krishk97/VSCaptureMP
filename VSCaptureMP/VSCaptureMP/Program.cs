@@ -345,6 +345,11 @@ namespace VSCaptureMP
 
             }
 
+            //Connect to Arduino
+            Arduino arduino = new Arduino();
+            arduino.writeString("Connected to C# console app..."); 
+            
+
             Console.WriteLine("Connecting to {0}...", IPAddressRemote);
             Console.WriteLine();
             Console.WriteLine("Requesting Transmission set {0} from monitor", nIntervalset);
@@ -425,6 +430,10 @@ namespace VSCaptureMP
                 catch (Exception ex)
                 {
                     Console.WriteLine("Error opening/writing to UDP port :: " + ex.Message, "Error!");
+                }
+                finally
+                {
+                    arduino.writeString("Disconnecting from C# console app..."); 
                 }
             }
             else

@@ -12,3 +12,10 @@ D:\Documents\VSCaptureMP\VSCaptureMP\VSCaptureMP\bin\Debug\VSCaptureMP.pdb
 D:\Documents\VSCaptureMP\VSCaptureMP\VSCaptureMP\obj\Debug\VSCaptureMP.csproj.CoreCompileInputs.cache
 D:\Documents\VSCaptureMP\VSCaptureMP\VSCaptureMP\obj\Debug\VSCaptureMP.exe
 D:\Documents\VSCaptureMP\VSCaptureMP\VSCaptureMP\obj\Debug\VSCaptureMP.pdb
+C:\Users\krish\Documents\Research - Kadambi\VSCaptureMP\VSCaptureMP\VSCaptureMP\obj\Debug\VSCaptureMP.exe
+C:\Users\krish\Documents\Research - Kadambi\VSCaptureMP\VSCaptureMP\VSCaptureMP\obj\Debug\VSCaptureMP.pdb
+C:\Users\krish\Documents\Research - Kadambi\VSCaptureMP\VSCaptureMP\VSCaptureMP\bin\Debug\VSCaptureMP.exe.config
+C:\Users\krish\Documents\Research - Kadambi\VSCaptureMP\VSCaptureMP\VSCaptureMP\bin\Debug\VSCaptureMP.exe
+C:\Users\krish\Documents\Research - Kadambi\VSCaptureMP\VSCaptureMP\VSCaptureMP\bin\Debug\VSCaptureMP.pdb
+C:\Users\krish\Documents\Research - Kadambi\VSCaptureMP\VSCaptureMP\VSCaptureMP\obj\Debug\VSCaptureMP.csprojAssemblyReference.cache
+C:\Users\krish\Documents\Research - Kadambi\VSCaptureMP\VSCaptureMP\VSCaptureMP\obj\Debug\VSCaptureMP.csproj.CoreCompileInputs.cache
