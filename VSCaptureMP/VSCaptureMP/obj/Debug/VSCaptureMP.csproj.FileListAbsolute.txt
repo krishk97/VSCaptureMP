@@ -1,2 +1,14 @@
 C:/Users/John/Documents/Philips connect/VSCaptureMP/VSCaptureMP/VSCaptureMP/bin/Debug/VSCaptureMP.exe.config
 C:/Users/John/Documents/Philips connect/VSCaptureMPWave/VSCaptureMP/VSCaptureMP/bin/Debug/VSCaptureMP.exe.config
+C:\Users\Krish\Documents\VSCaptureMP\VSCaptureMP\VSCaptureMP\bin\Debug\VSCaptureMP.exe.config
+C:\Users\Krish\Documents\VSCaptureMP\VSCaptureMP\VSCaptureMP\bin\Debug\VSCaptureMP.exe
+C:\Users\Krish\Documents\VSCaptureMP\VSCaptureMP\VSCaptureMP\bin\Debug\VSCaptureMP.pdb
+C:\Users\Krish\Documents\VSCaptureMP\VSCaptureMP\VSCaptureMP\obj\Debug\VSCaptureMP.csproj.CoreCompileInputs.cache
+C:\Users\Krish\Documents\VSCaptureMP\VSCaptureMP\VSCaptureMP\obj\Debug\VSCaptureMP.exe
+C:\Users\Krish\Documents\VSCaptureMP\VSCaptureMP\VSCaptureMP\obj\Debug\VSCaptureMP.pdb
+D:\Documents\VSCaptureMP\VSCaptureMP\VSCaptureMP\bin\Debug\VSCaptureMP.exe.config
+D:\Documents\VSCaptureMP\VSCaptureMP\VSCaptureMP\bin\Debug\VSCaptureMP.exe
+D:\Documents\VSCaptureMP\VSCaptureMP\VSCaptureMP\bin\Debug\VSCaptureMP.pdb
+D:\Documents\VSCaptureMP\VSCaptureMP\VSCaptureMP\obj\Debug\VSCaptureMP.csproj.CoreCompileInputs.cache
+D:\Documents\VSCaptureMP\VSCaptureMP\VSCaptureMP\obj\Debug\VSCaptureMP.exe
+D:\Documents\VSCaptureMP\VSCaptureMP\VSCaptureMP\obj\Debug\VSCaptureMP.pdb

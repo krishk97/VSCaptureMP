@@ -56,8 +56,8 @@ namespace VSCaptureMP
         public string m_DeviceID;
         public string m_jsonposturl;
         public int m_dataexportset = 1;
-
-
+        public string m_FilenamePrefix; 
+        
         public class NumericValResult
         {
             public string Timestamp;
@@ -1175,7 +1175,7 @@ namespace VSCaptureMP
         {
             if (m_NumericValList.Count != 0)
             {
-                string pathcsv = Path.Combine(Directory.GetCurrentDirectory(), "MPDataExport.csv");
+                string pathcsv = Path.Combine(Directory.GetCurrentDirectory(), string.Format("{0}_MPDataExport.csv", m_FilenamePrefix));
 
                 m_strbuildheaders.Append("Time");
                 m_strbuildheaders.Append(',');
@@ -1207,7 +1207,7 @@ namespace VSCaptureMP
         {
             if (m_NumericValList.Count != 0)
             {
-                string pathcsv = Path.Combine(Directory.GetCurrentDirectory(), "MPDataExport.csv");
+                string pathcsv = Path.Combine(Directory.GetCurrentDirectory(), string.Format("{0}_MPDataExport.csv", m_FilenamePrefix));
 
                 foreach (NumericValResult NumValResult in m_NumericValList)
                 {
@@ -1232,7 +1232,7 @@ namespace VSCaptureMP
             if (m_NumericValList.Count != 0)
             {
                 WriteNumericHeadersList();
-                string pathcsv = Path.Combine(Directory.GetCurrentDirectory(), "MPDataExport.csv");
+                string pathcsv = Path.Combine(Directory.GetCurrentDirectory(), string.Format("{0}_MPDataExport.csv", m_FilenamePrefix));
 
                 m_strbuildvalues.Append(m_NumericValList.ElementAt(0).Timestamp);
                 m_strbuildvalues.Append(',');
@@ -1265,7 +1265,7 @@ namespace VSCaptureMP
             if (m_NumericValList.Count != 0)
             {
                 WriteNumericHeadersListConsolidatedCSV();
-                string pathcsv = Path.Combine(Directory.GetCurrentDirectory(), "MPDataExport.csv");
+                string pathcsv = Path.Combine(Directory.GetCurrentDirectory(), string.Format("{0}_MPDataExport.csv", m_FilenamePrefix));
 
                 uint firstelementreltimestamp = Convert.ToUInt32(m_NumericValList.ElementAt(0).Relativetimestamp);
                 int listcount = m_NumericValList.Count;
@@ -1308,7 +1308,7 @@ namespace VSCaptureMP
         {
             if (m_NumericValList.Count != 0 && m_transmissionstart)
             {
-                string pathcsv = Path.Combine(Directory.GetCurrentDirectory(), "MPDataExport.csv");
+                string pathcsv = Path.Combine(Directory.GetCurrentDirectory(), string.Format("{0}_MPDataExport.csv", m_FilenamePrefix));
 
                 uint firstelementreltimestamp = Convert.ToUInt32(m_NumericValList.ElementAt(0).Relativetimestamp);
                 int listcount = m_NumValHeaders.Count;
@@ -1357,7 +1357,7 @@ namespace VSCaptureMP
 				
 				foreach (WaveValResult WavValResult in m_WaveValResultList)
 				{
-					string WavValID = string.Format("{0}WaveExport.csv",WavValResult.PhysioID);
+					string WavValID = string.Format("{0}_{1}WaveExport.csv", m_FilenamePrefix, WavValResult.PhysioID);
 
 					string pathcsv = Path.Combine(Directory.GetCurrentDirectory(), WavValID);
 

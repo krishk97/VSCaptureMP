@@ -53,6 +53,7 @@ namespace VSCaptureMP
                 Console.WriteLine("-interval <Set numeric transmission interval option>");
                 Console.WriteLine("-waveset <Set waveform request priority option>");
                 Console.WriteLine("-export <Set data export CSV or JSON option>");
+                Console.WriteLine("-exportfilename <Set data export filename prefix>"); 
                 Console.WriteLine("-devid <Set device ID for JSON export>");
                 Console.WriteLine("-url <Set JSON export url>");
                 Console.WriteLine("-scale <Set waveform data scale or calibrate option>");
@@ -83,17 +84,15 @@ namespace VSCaptureMP
 
             if (nConnectset == 1) ConnectviaMIB(args);
             else if (nConnectset == 2) ConnectviaLAN(args);
-            
-            ConsoleKeyInfo cki;
 
+            ConsoleKeyInfo cki;
             do
             {
                 cki = Console.ReadKey(true);
-               
-            }
-            while (cki.Key != ConsoleKey.Escape);
 
-        }
+            }
+            while (cki.Key != ConsoleKey.Escape);        
+        } 
 
         public class UdpState
         {
@@ -260,6 +259,23 @@ namespace VSCaptureMP
             int nCSVset = 3;
             //if (sCSVset != "") nCSVset = Convert.ToInt32(sCSVset);
 
+            // string sSubjectIDset;
+            // string sLightCondset;
+            // string sExcersizeset; 
+            string DataExportFilenamePrefix; 
+            if (parser.Arguments.ContainsKey("exportfilename"))
+            {
+                DataExportFilenamePrefix = parser.Arguments["exportfilename"][0];
+            }
+            else
+            {
+                Console.WriteLine(); 
+                Console.Write("Enter data export filename prefix:"); 
+                DataExportFilenamePrefix = Console.ReadLine();
+            }
+
+            if (DataExportFilenamePrefix == "") DataExportFilenamePrefix = "VSCaptureMP"; 
+            
             string sWaveformSet;
             if (parser.Arguments.ContainsKey("waveset"))
             {
@@ -333,8 +349,8 @@ namespace VSCaptureMP
             Console.WriteLine();
             Console.WriteLine("Requesting Transmission set {0} from monitor", nIntervalset);
             Console.WriteLine();
-            Console.WriteLine("Data will be written to CSV file MPDataExport.csv in same folder");
-            Console.WriteLine();
+            Console.WriteLine("Numeric data will be written to CSV file {0}_MPDataExport.csv in same folder", DataExportFilenamePrefix);
+            Console.WriteLine(); 
             Console.WriteLine("Press Escape button to Stop");
 
             if (nDataExportset > 0 && nDataExportset < 3) _MPudpclient.m_dataexportset = nDataExportset;
@@ -351,6 +367,7 @@ namespace VSCaptureMP
 
                 _MPudpclient.m_DeviceID = DeviceID;
                 _MPudpclient.m_jsonposturl = JSONPostUrl;
+                _MPudpclient.m_FilenamePrefix = DataExportFilenamePrefix;
 
                 try
                 {
@@ -402,23 +419,21 @@ namespace VSCaptureMP
                     //Receive PollDataResponse message
                     _MPudpclient.BeginReceive(new AsyncCallback(ReceiveCallback), state);
 
-                    //Parse PollDataResponses
+                    //Parse PollDataResponses                                       
 
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("Error opening/writing to UDP port :: " + ex.Message, "Error!");
                 }
-
             }
             else
             {
                 Console.WriteLine("Invalid IP Address");
             }
 
-
-
         }
+
         public static void ConnectviaMIB(string[] args)
         {
             // Create a new SerialPort object with default settings.
@@ -555,6 +570,10 @@ namespace VSCaptureMP
                 _serialPort.m_jsonposturl = JSONPostUrl;
 
                 if (nDataExportset > 0 && nDataExportset < 3) _serialPort.m_dataexportset = nDataExportset;
+
+
+
+
 
                 /*Console.WriteLine();
                 Console.WriteLine("CSV Data Export Options:");
